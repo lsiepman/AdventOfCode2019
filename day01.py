@@ -19,5 +19,19 @@ def part1(data):
     print(f"Part 1: {sum(total_fuel)}")
 
 
+def part2(data):
+    total_fuel = []
+
+    for i in data:
+        fuel = calc_fuel(i)
+
+        while fuel > 0:
+            total_fuel.append(fuel)
+            fuel = calc_fuel(fuel)
+
+    print(f"Part 2: {sum(total_fuel)}")
+
+
 if __name__ == "__main__":
     part1(data)
+    part2(data)
